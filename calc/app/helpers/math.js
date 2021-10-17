@@ -1,23 +1,24 @@
-function add(n1, n2) {
+export function add(n1, n2) {
     return n1 + n2
 }
 
-function sub(n1,n2){
+export function sub(n1,n2){
     return n1-n2
 }
 
-function multiply(n1,n2){
+export function multiply(n1,n2){
     return n1*n2
 }
 
-function divide(n1,n2){
+export function divide(n1,n2){
     return n1/n2
 }
 
 
-function equals(n1,n2,fallback){
-    fallback(n1,n2)
+export function equals(n1,n2,fallback){
+    return fallback(n1,n2)
 }
+
 
 
 

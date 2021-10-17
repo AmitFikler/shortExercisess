@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./app/helpers/math.js":
+/*!*****************************!*\
+  !*** ./app/helpers/math.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"add\": () => (/* binding */ add),\n/* harmony export */   \"sub\": () => (/* binding */ sub),\n/* harmony export */   \"multiply\": () => (/* binding */ multiply),\n/* harmony export */   \"divide\": () => (/* binding */ divide),\n/* harmony export */   \"equals\": () => (/* binding */ equals)\n/* harmony export */ });\nfunction add(n1, n2) {\r\n    return n1 + n2\r\n}\r\n\r\nfunction sub(n1,n2){\r\n    return n1-n2\r\n}\r\n\r\nfunction multiply(n1,n2){\r\n    return n1*n2\r\n}\r\n\r\nfunction divide(n1,n2){\r\n    return n1/n2\r\n}\r\n\r\n\r\nfunction equals(n1,n2,fallback){\r\n    return fallback(n1,n2)\r\n}\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://calc/./app/helpers/math.js?");
+
+/***/ }),
+
 /***/ "./app/main.js":
 /*!*********************!*\
   !*** ./app/main.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./app/styles.css\");\n\r\n\r\n\r\nfunction hello() {\r\n    console.log(\"hello\")\r\n\r\n}\r\n\r\nhello()\n\n//# sourceURL=webpack://calc/./app/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./app/styles.css\");\n/* harmony import */ var _helpers_math__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers/math */ \"./app/helpers/math.js\");\n\r\n\r\n\r\n\r\nconst plusBtn = document.getElementsByName(\"plus\")[0]\r\nconst subBtn = document.getElementsByName(\"sub\")[0]\r\nconst multiplyBtn = document.getElementsByName(\"multiply\")[0]\r\nconst divideBtn = document.getElementsByName(\"divide\")[0]\r\nconst resultInput = document.querySelector(\"input\")\r\nconst equelsBtn = document.getElementsByName(\"equels\")[0]\r\nconst dot = document.getElementsByName(\"dot\")[0]\r\nconst sqrt = document.getElementsByName(\"sqrt\")[0]\r\nconst deleteBtn = document.getElementsByName(\"delete\")[0]\r\n\r\nsqrt.addEventListener(\"click\",()=>{\r\n    resultInput.value = Math.sqrt(resultInput.value) \r\n})\r\n\r\ndot.addEventListener(\"click\",()=>{\r\n    if (resultInput.value.includes(\".\") || resultInput.value.length === 0){\r\n        return;\r\n    } else {\r\n        resultInput.value += \".\"\r\n    }\r\n})\r\n\r\ndeleteBtn.addEventListener(\"click\", ()=>{\r\n    resultInput.value = \"\"\r\n})\r\n\r\nplusBtn.addEventListener(\"click\",()=>{\r\n    calcObj.n1 = Number(resultInput.value);\r\n    calcObj.action = _helpers_math__WEBPACK_IMPORTED_MODULE_1__.add;\r\n    resultInput.value = \"\"\r\n})\r\n\r\nequelsBtn.addEventListener(\"click\",()=>{\r\n    calcObj.n2 = Number(resultInput.value)\r\n    resultInput.value = (0,_helpers_math__WEBPACK_IMPORTED_MODULE_1__.equals)(calcObj.n1, calcObj.n2, calcObj.action)\r\n})\r\n\r\nsubBtn.addEventListener(\"click\",()=>{\r\n    calcObj.n1 = Number(resultInput.value);\r\n    calcObj.action = _helpers_math__WEBPACK_IMPORTED_MODULE_1__.sub;\r\n    resultInput.value = \"\"\r\n})\r\nmultiplyBtn.addEventListener(\"click\",()=>{\r\n    calcObj.n1 = Number(resultInput.value);\r\n    calcObj.action = _helpers_math__WEBPACK_IMPORTED_MODULE_1__.multiply;\r\n    resultInput.value = \"\"\r\n})\r\ndivideBtn.addEventListener(\"click\",()=>{\r\n    calcObj.n1 = Number(resultInput.value);\r\n    calcObj.action = _helpers_math__WEBPACK_IMPORTED_MODULE_1__.divide;\r\n    resultInput.value = \"\"\r\n})\r\n\r\ndocument.querySelectorAll(\".number\").forEach(number =>{\r\n    number.addEventListener(\"click\",pressNumber)\r\n})\r\n\r\nfunction pressNumber(e){\r\n    resultInput.value = resultInput.value + e.target.value\r\n}\r\n\r\nlet calcObj = {}\r\n\r\n\r\nif (resultInput.value === `666`) {\r\n    resultInput.style.color = \"red\"\r\n}\r\n\n\n//# sourceURL=webpack://calc/./app/main.js?");
 
 /***/ }),
 
@@ -57,6 +67,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
